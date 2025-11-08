@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -22,9 +25,20 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    
     private Rigidbody2D playerbody;
 
 
+    private int CawRange    {
+        get { return _cawRange;} set { _cawRange = value; }
+    }
+    public int _cawRange = 5;
+    private bool Cawing    {
+        get { return _cawing;} set { _cawing = value; }
+    }
+
+    private bool canCaw = true;
+    public bool _cawing;
     private void Awake()
     {
         if (Instance == null)
@@ -44,9 +58,52 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         UpdateMovement();
+        
+        if (Input.GetKeyDown(KeyCode.C) && canCaw)
+        {
+            SoundManager.Instance.PlaySFX(3);
+            StartCoroutine(Caw());
+        }
     }
 
 
+    IEnumerator Caw()
+    {
+        canCaw = false;
+        List<GameObject> enemiesInRange = new List<GameObject>();
+        List<GameObject> foodInRange = new List<GameObject>();
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, CawRange);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.gameObject.CompareTag("Enemy"))
+            {
+                enemiesInRange.Add(hitCollider.gameObject);
+            }
+            if (hitCollider.gameObject.CompareTag("Food"))
+            {
+                foodInRange.Add(hitCollider.gameObject);
+            }
+        }
+        foreach (GameObject enemy in enemiesInRange)
+        {
+            enemy.GetComponent<AiMovement>().canMove = false;
+            yield return new WaitForSeconds(1f);
+            enemy.GetComponent<AiMovement>().canMove = true;
+        }
+        foreach (GameObject food in foodInRange)
+        {
+            while (true)
+            {
+                food.transform.position = Vector2.MoveTowards(food.transform.position, transform.position,
+                    20f * Time.deltaTime);
+                yield return null;
+            }
+        }
+        enemiesInRange.Clear();
+        foodInRange.Clear();
+        yield return new WaitForSeconds(2f);
+        canCaw = true;
+    }
 private void UpdateMovement()
 {
 

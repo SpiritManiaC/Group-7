@@ -64,14 +64,14 @@ public class Player2Controller : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             ScoreManager.Instance.enemiesLeft.Remove(other.gameObject);
-            SoundManager.Instance.soundEffectSource.Play();
+            SoundManager.Instance.PlayRandomEatSFX();
             Destroy(other.gameObject);
             ScoreManager.Instance.AddPlayerScore(25);
         }
 
         if (other.gameObject.tag == "Player" && ScoreManager.Instance.foodLeft.Count == 0)
         {
-            SoundManager.Instance.soundEffectSource.Play();
+            SoundManager.Instance.PlayRandomEatSFX();
             Destroy(gameObject);
             ScoreManager.Instance.LossOrWin();
         }

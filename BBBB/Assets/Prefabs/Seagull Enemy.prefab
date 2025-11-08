@@ -177,3 +177,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetFood: {fileID: 0}
   moveSpeed: 2
+  canMove: 1

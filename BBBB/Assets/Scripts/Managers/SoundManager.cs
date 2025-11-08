@@ -8,6 +8,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField, Header("Drag into scene. Play music across levels or sound effects once.")]
     public AudioSource musicSource;
     public AudioSource soundEffectSource;
+    
+    public AudioClip[] soundEffects;
+    public AudioClip[] music;
 
     private void Awake()
     {
@@ -30,8 +33,13 @@ public class SoundManager : MonoBehaviour
         musicSource.Stop();
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(int soundID)
     {
-        soundEffectSource.PlayOneShot(clip);
+        soundEffectSource.PlayOneShot(soundEffects[soundID]);
+    }
+    public void PlayRandomEatSFX()
+    {
+        int eatSoundToPlay = Random.Range(0, 2);
+        soundEffectSource.PlayOneShot(soundEffects[eatSoundToPlay]);
     }
 }

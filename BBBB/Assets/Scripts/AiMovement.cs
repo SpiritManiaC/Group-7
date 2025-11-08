@@ -5,25 +5,36 @@ public class AiMovement : MonoBehaviour
 {
     public GameObject targetFood;
     public float moveSpeed;
+
+    public bool canMove = true;
+ //   public float distanceToPlayer;
     // Update is called once per frame
     void Update()
     {
-        if (ScoreManager.Instance.foodLeft.Count > 0)
+        if (canMove)
         {
-            if (!targetFood)
+            if (ScoreManager.Instance.foodLeft.Count > 0)
             {
-                NewTarget();
-            }
-            transform.position = Vector2.MoveTowards(transform.position, targetFood.transform.position,
-                moveSpeed * Time.deltaTime);
+                if (!targetFood)
+                {
+                    NewTarget();
+                }
+                transform.position = Vector2.MoveTowards(transform.position, targetFood.transform.position,
+                    moveSpeed * Time.deltaTime);
             
+            }
+            else
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position,
+                    moveSpeed * -1 * Time.deltaTime);
+            }
         }
-        else
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position,
-                moveSpeed * -1 * Time.deltaTime);
-        }
+      //  distanceToPlayer = Vector2.Distance(gameObject.transform.position, PlayerController.Instance.gameObject.transform.position);
+  //      if (PlayerController.Instance._cawing && distanceToPlayer <= PlayerController.Instance._cawRange)
+  //      { canMove = false;
+    //    } else
+    //    { canMove = true; }
         
     }
 
@@ -39,17 +50,17 @@ public class AiMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && other.gameObject.GetComponent<PlayerController>()._shieldAmount > 0 
                                                   && ScoreManager.Instance.foodLeft.Count > 0)
         {
-            SoundManager.Instance.soundEffectSource.Play();
+            SoundManager.Instance.PlayRandomEatSFX();
             other.gameObject.GetComponent<PlayerController>()._shieldAmount -= 1;
         } else if (other.gameObject.CompareTag("Player") && ScoreManager.Instance.foodLeft.Count > 0)
         {
-            SoundManager.Instance.soundEffectSource.Play();
+            SoundManager.Instance.PlayRandomEatSFX();
             Destroy(other.gameObject);
             GameStateManager.Instance.LoseGame();  
         } 
         if (other.gameObject.CompareTag("Player") && ScoreManager.Instance.foodLeft.Count <= 0)
         {
-            SoundManager.Instance.soundEffectSource.Play();
+            SoundManager.Instance.PlayRandomEatSFX();
             ScoreManager.Instance.enemiesLeft.Remove(gameObject);
             ScoreManager.Instance.LossOrWin();
             Destroy(gameObject);

@@ -26,6 +26,10 @@ public class UpgradeButtons : MonoBehaviour
     {
         RandomizeUpgradeBonuses();
         amountOfUpgradesText.text = "Upgrades: " + UpgradeManager.Instance.amountOfUpgrades;
+        if (UpgradeManager.Instance.amountOfUpgrades < 1)
+        {
+            gameObject.GetComponent<Canvas>().enabled = true;
+        }
     }
 
     public void RandomizeUpgradeBonuses()

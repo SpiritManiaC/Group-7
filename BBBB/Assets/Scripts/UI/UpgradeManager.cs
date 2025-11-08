@@ -27,8 +27,6 @@ public class UpgradeManager : MonoBehaviour
         get { return _p2DashAmount;} set { _p2DashAmount = value; }
     }
     public int _p2DashAmount;
-    public GameObject UpgradeUIPrefab;
-    
     public int amountOfUpgrades = 0;
     
     
@@ -40,7 +38,6 @@ public class UpgradeManager : MonoBehaviour
         if (Instance == null) { Instance = this; }
         else { Destroy(gameObject); }
         DontDestroyOnLoad(gameObject);
-        UpgradeUIPrefab.GetComponent<Canvas>().enabled = true;
     }
     
     public void ResetStats()

@@ -37,7 +37,8 @@ public class PlayerController : MonoBehaviour
         get { return _cawing;} set { _cawing = value; }
     }
 
-    private bool canCaw = true;
+    private float cawCooldown = 3f;
+    private float cawCooldownTimer;
     public bool _cawing;
     private void Awake()
     {
@@ -59,8 +60,9 @@ public class PlayerController : MonoBehaviour
     {
         UpdateMovement();
         
-        if (Input.GetKeyDown(KeyCode.C) && canCaw)
+        if (Input.GetKeyDown(KeyCode.C) && cawCooldown > 0)
         {
+            cawCooldown -= Time.deltaTime;
             SoundManager.Instance.PlaySFX(3);
             StartCoroutine(Caw());
         }
@@ -69,7 +71,6 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Caw()
     {
-        canCaw = false;
         List<GameObject> enemiesInRange = new List<GameObject>();
         List<GameObject> foodInRange = new List<GameObject>();
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, CawRange);
@@ -102,7 +103,6 @@ public class PlayerController : MonoBehaviour
         enemiesInRange.Clear();
         foodInRange.Clear();
         yield return new WaitForSeconds(2f);
-        canCaw = true;
     }
 private void UpdateMovement()
 {

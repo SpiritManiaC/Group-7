@@ -927,6 +927,16 @@ MonoBehaviour:
   FovRange: {x: 1, y: 100}
   DollyRange: {x: -100, y: 100}
   OrthoSizeRange: {x: 5, y: 1000}
+--- !u!82 &1783768515 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1585105863422146277, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+  m_PrefabInstance: {fileID: 7597168319325887979}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1783768518 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4022903961022332297, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+  m_PrefabInstance: {fileID: 7597168319325887979}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1855247094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,6 +1164,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6822517246419605205, guid: d4a064d5edc11d74c9d10b9063ccc5ca, type: 3}
+      propertyPath: _cawRange
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822517246419605205, guid: d4a064d5edc11d74c9d10b9063ccc5ca, type: 3}
       propertyPath: moveSpeed
       value: 8
       objectReference: {fileID: 0}
@@ -1366,9 +1380,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2303640569487449607, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 1783768518}
+    - target: {fileID: 2303640569487449607, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: soundEffectSource
+      value: 
+      objectReference: {fileID: 1783768515}
+    - target: {fileID: 2303640569487449607, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: soundEffects.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303640569487449607, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: 'soundEffects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: acb196913ba1aa34b80cf6d69a9ebf04, type: 3}
+    - target: {fileID: 2303640569487449607, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: 'soundEffects.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 56a684106f572a1419f740a1ce58cf5d, type: 3}
+    - target: {fileID: 2303640569487449607, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: 'soundEffects.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a8a6989cb71a6848a265fda6513949f, type: 3}
+    - target: {fileID: 2303640569487449607, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: 'soundEffects.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 35e160197b4c98c43b9c52f5eca056dc, type: 3}
     - target: {fileID: 3433434344031897487, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787174967487433732, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022903961022332297, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: m_Volume
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6833116866910138274, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
       propertyPath: m_LocalPosition.x

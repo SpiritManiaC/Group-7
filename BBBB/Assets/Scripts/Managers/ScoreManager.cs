@@ -41,10 +41,13 @@ public class ScoreManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        UpdateUI();
+    }
 
+    public void UpdateFoodAndEnemyList()
+    {
         foodLeft = new List<GameObject>(GameObject.FindGameObjectsWithTag("Food"));
         enemiesLeft = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
-        UpdateUI();
     }
 
     public void AddPlayerScore(int value)

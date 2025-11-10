@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: e359065c78896ea43bf77c7c7477431d
+guid: f77b30c29aef10846a2f071d47d221ba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 633119417025165129
-    second: magpie4_0
+      213: -1719569706811857064
+    second: magpieFly_0
+  - first:
+      213: -4116067938993886267
+    second: magpieFly_1
+  - first:
+      213: 2679637088183603979
+    second: magpieFly_2
+  - first:
+      213: -5402393761914840376
+    second: magpieFly_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: magpie4_0
+      name: magpieFly_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 800
-        height: 428
+        x: 369
+        y: 2992
+        width: 11
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 947ff2061ca49c800800000000000000
-      internalID: 633119417025165129
+      spriteID: 857e4fa567cd228e0800000000000000
+      internalID: -1719569706811857064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magpieFly_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 3811
+        height: 2990
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb25e0740ac0e6c0800000000000000
+      internalID: -4116067938993886267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magpieFly_2
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 57
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0355200cbbff2520800000000000000
+      internalID: 2679637088183603979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magpieFly_3
+      rect:
+        serializedVersion: 2
+        x: 2576
+        y: 0
+        width: 22
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ca97442f77d605b0800000000000000
+      internalID: -5402393761914840376
       vertices: []
       indices: 
       edges: []
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      magpie4_0: 633119417025165129
+      magpieFly_0: -1719569706811857064
+      magpieFly_1: -4116067938993886267
+      magpieFly_2: 2679637088183603979
+      magpieFly_3: -5402393761914840376
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

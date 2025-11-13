@@ -32,7 +32,7 @@ public class UpgradeButtons : MonoBehaviour
         }
     }
 
-    public void RandomizeUpgradeBonuses()
+    private void RandomizeUpgradeBonuses()
     {
         speedBonus = Random.Range(1, maxSpeedBonus);
         shieldBonus = Random.Range(1, maxShieldBonus);

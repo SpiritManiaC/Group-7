@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,8 +28,12 @@ public class PlayerController : MonoBehaviour
 
     
     private Rigidbody2D playerbody;
-
-
+    
+    private Animator PlayerAnimator {
+        get { return _playerAnimator; }
+    set { _playerAnimator = value; } }
+    
+    public Animator _playerAnimator;
     private int CawRange    {
         get { return _cawRange;} set { _cawRange = value; }
     }
@@ -58,16 +63,19 @@ public class PlayerController : MonoBehaviour
             moveSpeed += UpgradeManager.Instance._p1SpeedBonus;
             _shieldAmount = UpgradeManager.Instance._p1Shield;
         }
+
+        _playerAnimator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         UpdateMovement();
         
-        if (Input.GetKeyDown(KeyCode.C) && cawCooldown > 0)
+        if (Input.GetKeyDown(KeyCode.C) && Time.time >= cawCooldownTimer)
         {
-            cawCooldown -= Time.deltaTime;
-            SoundManager.Instance.PlaySFX(3);
+            cawCooldownTimer = Time.time + cawCooldown;
+            int caw = Random.Range(3, 5);
+            SoundManager.Instance.PlaySFX(caw);
             StartCoroutine(Caw());
         }
     }
@@ -124,27 +132,17 @@ private void UpdateMovement()
         moveDir.y = _input.moveVector.y;
    
       }
-
-
+      
       if (Mathf.Abs(_input.moveVector.y) == Mathf.Abs(_input.moveVector.x))
-     {
-        
-        moveDir.x = _input.moveVector.x;
-       }
+     { moveDir.x = _input.moveVector.x; }
 
        if (_input.moveVector == Vector2.zero)
-       {
-           moveDir = Vector2.zero;
-        }
+       { moveDir = Vector2.zero; }
 
         if (Mathf.Abs(moveDir.magnitude) > 0)
-     {
-        isMoving = true;
-      }
+     { isMoving = true; }
       if (Mathf.Abs(moveDir.magnitude) !> 0)
-      {
-        isMoving = false;
-      }
+      { isMoving = false; }
     }
     else
     { moveDir = Vector2.zero; }

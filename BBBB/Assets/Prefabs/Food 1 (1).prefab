@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5420603006277313149}
   - component: {fileID: 3083771802916496087}
   - component: {fileID: 4955550783721583809}
+  - component: {fileID: 5647720995392567429}
   m_Layer: 0
   m_Name: Food 1 (1)
   m_TagString: Food
@@ -149,10 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 8
-  pickupSound: {fileID: 0}
-  OnPickup:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!50 &4955550783721583809
 Rigidbody2D:
   serializedVersion: 5
@@ -180,3 +177,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5647720995392567429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9128621382859221016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca5cb207767cf864c8cf49c52de1afe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 7295434421531547482, guid: 691b5b393637e454482d161e5b5f177f, type: 3}

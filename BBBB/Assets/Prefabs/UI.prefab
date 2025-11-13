@@ -1454,7 +1454,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5970314393109727015, guid: 9a49e104882988e44b68b4c4c1ad1fc3, type: 3}
       propertyPath: soundEffects.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5970314393109727015, guid: 9a49e104882988e44b68b4c4c1ad1fc3, type: 3}
       propertyPath: 'soundEffects.Array.data[0]'
@@ -1472,6 +1472,10 @@ PrefabInstance:
       propertyPath: 'soundEffects.Array.data[3]'
       value: 
       objectReference: {fileID: 8300000, guid: 35e160197b4c98c43b9c52f5eca056dc, type: 3}
+    - target: {fileID: 5970314393109727015, guid: 9a49e104882988e44b68b4c4c1ad1fc3, type: 3}
+      propertyPath: 'soundEffects.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ee011ef55cd638645a3e8e5abe676aba, type: 3}
     - target: {fileID: 6115707917395140155, guid: 9a49e104882988e44b68b4c4c1ad1fc3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpawnPointSquare : MonoBehaviour
 {
-    private Collider2D spawnArea;
+    private SpriteRenderer spawnArea;
 
     public int foodToSpawn;
     public int enemiesToSpawn;
@@ -10,9 +10,10 @@ public class SpawnPointSquare : MonoBehaviour
     public GameObject[] enemyList;
     public GameObject[] foodList;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    void Start()
     {
-        spawnArea = gameObject.GetComponent<Collider2D>();
+      //  gameObject.GetComponent<BoxCollider2D>().size += new Vector2(UpgradeManager.Instance.amountOfUpgrades *5,UpgradeManager.Instance.amountOfUpgrades *5);
+        spawnArea = gameObject.GetComponent<SpriteRenderer>();
         foodToSpawn = UpgradeManager.Instance.amountOfUpgrades * 5;
         enemiesToSpawn = UpgradeManager.Instance.amountOfUpgrades * 4;
 
@@ -33,6 +34,7 @@ public class SpawnPointSquare : MonoBehaviour
             int foodSpawning = Random.Range(0, foodList.Length);
             Instantiate(foodList[foodSpawning], randomPosition, Quaternion.identity);
         }
+        ScoreManager.Instance.UpdateFoodAndEnemyList();
     }
 
     // Update is called once per frame

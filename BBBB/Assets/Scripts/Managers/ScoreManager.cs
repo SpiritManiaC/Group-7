@@ -42,7 +42,6 @@ public class ScoreManager : MonoBehaviour
             Destroy(gameObject);
         }
         UpdateUI();
-        UpdateFoodAndEnemyList();
     }
 
     public void UpdateFoodAndEnemyList()

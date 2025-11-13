@@ -54,12 +54,14 @@ public class AiMovement : MonoBehaviour
             other.gameObject.GetComponent<PlayerController>()._shieldAmount -= 1;
         } else if (other.gameObject.CompareTag("Player") && ScoreManager.Instance.foodLeft.Count > 0)
         {
+            other.gameObject.GetComponent<SpawnOnDeath>().SpawnTombstone();
             SoundManager.Instance.PlayRandomEatSFX();
             Destroy(other.gameObject);
             GameStateManager.Instance.LoseGame();  
         } 
         if (other.gameObject.CompareTag("Player") && ScoreManager.Instance.foodLeft.Count <= 0)
         {
+            gameObject.GetComponent<SpawnOnDeath>().SpawnTombstone();
             SoundManager.Instance.PlayRandomEatSFX();
             ScoreManager.Instance.enemiesLeft.Remove(gameObject);
             ScoreManager.Instance.LossOrWin();

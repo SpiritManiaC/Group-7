@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 3239198829522578900}
   - component: {fileID: 8986462571575036907}
   - component: {fileID: 379196922552488870}
+  - component: {fileID: -7630636981210091648}
+  - component: {fileID: 6649391021935046920}
+  - component: {fileID: 7561537747123267348}
   m_Layer: 0
   m_Name: Enemy Bird
   m_TagString: Enemy
@@ -162,7 +165,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &379196922552488870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,3 +181,50 @@ MonoBehaviour:
   targetFood: {fileID: 0}
   moveSpeed: 4
   canMove: 1
+--- !u!114 &-7630636981210091648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5870305408091323590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca5cb207767cf864c8cf49c52de1afe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 3011586101711171947, guid: 2d6d9fff915efac4ab009d8bdaf84256, type: 3}
+--- !u!114 &6649391021935046920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5870305408091323590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c25db0353891b48bbef42c448dfd90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &7561537747123267348
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5870305408091323590}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3cec4b759b1535e409cce3f6f22e9b57, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

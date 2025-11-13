@@ -63,6 +63,7 @@ public class Player2Controller : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
+            other.gameObject.GetComponent<SpawnOnDeath>().SpawnTombstone();
             ScoreManager.Instance.enemiesLeft.Remove(other.gameObject);
             SoundManager.Instance.PlayRandomEatSFX();
             Destroy(other.gameObject);
@@ -71,6 +72,7 @@ public class Player2Controller : MonoBehaviour
 
         if (other.gameObject.tag == "Player" && ScoreManager.Instance.foodLeft.Count == 0)
         {
+            gameObject.GetComponent<SpawnOnDeath>().SpawnTombstone();
             SoundManager.Instance.PlayRandomEatSFX();
             Destroy(gameObject);
             ScoreManager.Instance.LossOrWin();

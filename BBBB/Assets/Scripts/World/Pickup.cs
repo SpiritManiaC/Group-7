@@ -17,6 +17,7 @@ public class Pickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            gameObject.GetComponent<SpawnOnDeath>().SpawnTombstone();
             SoundManager.Instance.PlayRandomEatSFX();
             ScoreManager.Instance.foodLeft.Remove(gameObject);
             other.gameObject.GetComponent<Transform>().localScale += new Vector3(0.2f, 0.2f);
@@ -25,6 +26,7 @@ public class Pickup : MonoBehaviour
         }
         if (other.CompareTag("Enemy"))
         {
+            gameObject.GetComponent<SpawnOnDeath>().SpawnTombstone();
             ScoreManager.Instance.foodLeft.Remove(gameObject);
             ScoreManager.Instance.AddEnemyScore(value);
             Destroy(gameObject);

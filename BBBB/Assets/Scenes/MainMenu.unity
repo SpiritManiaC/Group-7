@@ -674,12 +674,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3568654908055099009, guid: 1652abe367a159d45b177d9335fcc3e7, type: 3}
+    - {fileID: 6033811826505161295, guid: 1652abe367a159d45b177d9335fcc3e7, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 9000860451828981447, guid: 1652abe367a159d45b177d9335fcc3e7, type: 3}
-      insertIndex: 5
+      insertIndex: 4
       addedObject: {fileID: 1302958202}
     - targetCorrespondingSourceObject: {fileID: 9000860451828981447, guid: 1652abe367a159d45b177d9335fcc3e7, type: 3}
-      insertIndex: 6
+      insertIndex: 5
       addedObject: {fileID: 1916109114}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1652abe367a159d45b177d9335fcc3e7, type: 3}
@@ -707,7 +708,7 @@ GameObject:
   - component: {fileID: 1302958204}
   - component: {fileID: 1302958203}
   m_Layer: 5
-  m_Name: Level_4
+  m_Name: Level_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -786,7 +787,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level 4
+          m_StringArgument: Level 3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1302958204
@@ -1035,7 +1036,7 @@ GameObject:
   - component: {fileID: 1916109116}
   - component: {fileID: 1916109115}
   m_Layer: 5
-  m_Name: Level_4 (1)
+  m_Name: Multiplayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

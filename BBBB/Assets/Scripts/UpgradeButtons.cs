@@ -41,6 +41,11 @@ public class UpgradeButtons : MonoBehaviour
         ChangeButtontext();
     }
 
+    public void ResetStats()
+    {
+        UpgradeManager.Instance.ResetStats();
+    }
+
     public void ChangeButtontext()
     {
         speedBonusText.text = "+" + speedBonus + " Speed";

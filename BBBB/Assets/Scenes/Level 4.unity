@@ -654,10 +654,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 8
-  pickupSound: {fileID: 0}
-  OnPickup:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &695315427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1013,10 +1009,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 8
-  pickupSound: {fileID: 0}
-  OnPickup:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &1055125626
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1193,10 +1185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 10
-  pickupSound: {fileID: 0}
-  OnPickup:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &1089820205
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2320,6 +2308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6069318449267747547, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: m_text
+      value: Main menu
+      objectReference: {fileID: 0}
     - target: {fileID: 6833116866910138274, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 281.94308
@@ -2359,6 +2351,22 @@ PrefabInstance:
     - target: {fileID: 6833116866910138274, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577262604063111893, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577262604063111893, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadSpecificScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577262604063111893, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055930778379776981, guid: acc753e817507c840b724b9945ff2c2d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

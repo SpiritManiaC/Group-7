@@ -15,12 +15,20 @@ public class SceneTransitionManager : MonoBehaviour
 
     public void LoadNextScene()
     {
+        if (UpgradeManager.Instance != null)
+        { Destroy(UpgradeManager.Instance.gameObject); }
+        if (SoundManager.Instance != null)
+        {Destroy(SoundManager.Instance.gameObject);}
         int nextSceneBuildInt = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene("Level" + nextSceneBuildInt);
+        SceneManager.LoadScene(nextSceneBuildInt);
     }
 
     public void LoadSpecificScene(string sceneName)
     {
+        if (UpgradeManager.Instance != null)
+        { Destroy(UpgradeManager.Instance.gameObject); }
+        if (SoundManager.Instance != null)
+        {Destroy(SoundManager.Instance.gameObject);}
         SceneManager.LoadScene(sceneName);
     }
 

@@ -23,7 +23,9 @@ public class GameStateManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        
     }
+
 
     public void WinGame()
     {

@@ -33,6 +33,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
+        
         if (Instance == null)
         {
             Instance = this;
@@ -42,6 +43,10 @@ public class ScoreManager : MonoBehaviour
             Destroy(gameObject);
         }
         UpdateUI();
+        if (UpgradeManager.Instance == null)
+        {
+            UpdateFoodAndEnemyList();
+        }
     }
 
     public void UpdateFoodAndEnemyList()

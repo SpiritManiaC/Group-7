@@ -48,6 +48,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 8860485357627516073}
   soundEffectSource: {fileID: 6403433434066530245}
+  soundEffects:
+  - {fileID: 8300000, guid: acb196913ba1aa34b80cf6d69a9ebf04, type: 3}
+  - {fileID: 8300000, guid: 56a684106f572a1419f740a1ce58cf5d, type: 3}
+  - {fileID: 8300000, guid: 4a8a6989cb71a6848a265fda6513949f, type: 3}
+  - {fileID: 8300000, guid: 35e160197b4c98c43b9c52f5eca056dc, type: 3}
+  - {fileID: 8300000, guid: ee011ef55cd638645a3e8e5abe676aba, type: 3}
+  music: []
 --- !u!82 &8860485357627516073
 AudioSource:
   m_ObjectHideFlags: 0
@@ -59,9 +66,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 4a7d26ae53f048f43b3f239953812d33, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4fb9233c5a1100f418d4de1de3b69bc9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.375
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -156,9 +163,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Resource: {fileID: 6418180475301049370, guid: b0a49afb8f7596a4988f54c0cba9b928, type: 2}
+  m_PlayOnAwake: 0
+  m_Volume: 0.77
   m_Pitch: 1
   Loop: 0
   Mute: 0

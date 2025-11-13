@@ -14,6 +14,7 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(transform.gameObject);
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
@@ -21,6 +22,10 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         PlayMusic();
+    }
+    public void DestroyMe()
+    {
+        Destroy(gameObject);
     }
 
     public void PlayMusic()

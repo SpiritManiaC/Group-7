@@ -34,7 +34,11 @@ public class SpawnPointSquare : MonoBehaviour
             int foodSpawning = Random.Range(0, foodList.Length);
             Instantiate(foodList[foodSpawning], randomPosition, Quaternion.identity);
         }
-        ScoreManager.Instance.UpdateFoodAndEnemyList();
+
+        if (UpgradeManager.Instance != null)
+        {
+            ScoreManager.Instance.UpdateFoodAndEnemyList();
+        }
     }
 
     // Update is called once per frame

@@ -52,8 +52,12 @@ public class PlayerController : MonoBehaviour
         }
         _input = GetComponent<PlayerInput>();
         playerbody = GetComponent<Rigidbody2D>();
-        moveSpeed += UpgradeManager.Instance._p1SpeedBonus;
-        _shieldAmount = UpgradeManager.Instance._p1Shield;
+
+        if (UpgradeManager.Instance != null)
+        {
+            moveSpeed += UpgradeManager.Instance._p1SpeedBonus;
+            _shieldAmount = UpgradeManager.Instance._p1Shield;
+        }
     }
 
     private void Update()

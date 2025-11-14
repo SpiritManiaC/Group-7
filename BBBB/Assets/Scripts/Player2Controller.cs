@@ -45,7 +45,6 @@ public class Player2Controller : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
-                dashesLeft -= 1;
                 StartCoroutine(Dash());
             }
         }
@@ -53,6 +52,7 @@ public class Player2Controller : MonoBehaviour
 
     IEnumerator Dash()
     {
+        dashesLeft -= 1;
         canDash = false;
         rb.linearVelocity = movementInput * (moveSpeed * 100);
         yield return new WaitForSeconds(1f);

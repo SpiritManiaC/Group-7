@@ -9,7 +9,7 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    #region "Movement"
+        #region "Movement"
 
     public static PlayerController Instance;
     public bool canMove = true;
@@ -36,12 +36,12 @@ public class PlayerController : MonoBehaviour
     private int CawRange    {
         get { return _cawRange;} set { _cawRange = value; }
     }
-    public int _cawRange = 5;
+    public int _cawRange = 4;
     private bool Cawing    {
         get { return _cawing;} set { _cawing = value; }
     }
 
-    private float cawCooldown = 3f;
+    private float cawCooldown = 5f;
     private float cawCooldownTimer;
     public bool _cawing;
     private void Awake()
@@ -61,6 +61,8 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed += UpgradeManager.Instance._p1SpeedBonus;
             _shieldAmount = UpgradeManager.Instance._p1Shield;
+            _cawRange += UpgradeManager.Instance._p1cawRangeBonus;
+            cawCooldown *= UpgradeManager.Instance._p1CawCooldownReduction/100;
         }
 
         _playerAnimator = GetComponent<Animator>();

@@ -15,11 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 2.unity
     guid: b3140243dbbf5934aa3d7b7761a19462
   - enabled: 1
-    path: Assets/Scenes/Level 4.unity
+    path: Assets/Scenes/Level 3.unity
     guid: f207f1c010606054e86957c9ca76e7ce
   - enabled: 1
     path: Assets/Scenes/Multiplayer.unity
     guid: a459ee1af9045c14db75923379fc3060
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer.unity
+    guid: ea282ec6933c42146a643ca95529d2f3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 98ef03675d098784aa87ab322accd65e, type: 2}
   m_UseUCBPForAssetBundles: 0

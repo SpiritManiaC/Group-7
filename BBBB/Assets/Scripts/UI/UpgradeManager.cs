@@ -7,6 +7,16 @@ public class UpgradeManager : MonoBehaviour
         get { return _p1SpeedBonus;} set { _p1SpeedBonus = value; }
     }
     public int _p1SpeedBonus;
+    private int P1CawRangeBonus   {
+        get { return _p1cawRangeBonus;} set { _p1cawRangeBonus = value; }
+    }
+    public int _p1cawRangeBonus;
+
+    private float P1P1CawCooldownReduction {
+        get { return _p1CawCooldownReduction;} set { _p1CawCooldownReduction = value; }
+    }
+
+    public float _p1CawCooldownReduction;
     
     private int P2SpeedBonus   {
         get { return _p2SpeedBonus;} set { _p2SpeedBonus = value; }
@@ -48,5 +58,7 @@ public class UpgradeManager : MonoBehaviour
         P2DashAmount = 0;
         P1Shield = 0;
         P2DashAmount = 0;
+        P1CawRangeBonus = 0;
+        P1P1CawCooldownReduction = 100;
     }
 }
